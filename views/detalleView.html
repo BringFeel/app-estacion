@@ -1,0 +1,209 @@
+@extern('head')
+@extern('header')
+
+<!-- template -->
+<template id="temperaturaTemplate">
+    <div class="info">
+        <div class="container">
+            <div class="titulo"> 
+                <i class="fa-solid fa-temperature-three-quarters colorNaranja"></i>
+                TEMPERATURA
+            </div>
+            <div class="cantidad">
+                <h2 class="unit" id="unitTemp">
+                    <i class="fa-solid fa-arrows-rotate fa-spin"></i>
+                </h2>
+                <div class="porcentaje">
+                    <h4 class="simbolo">°C</h4>
+                    <h4 class="unitDecimal" id="unitDecimalTemp">
+                </div>
+            </div>
+            <div class="maxmin">
+                <div class="content">
+                    <div class="titulo">
+                        <i class="fa-solid fa-caret-up colorVerdeClaro"></i>
+                        Máxima
+                    </div>
+                    <h4 class="data" id="maxTemp"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+                </div>
+                <div class="content">
+                    <div class="titulo">
+                        <i class="fa-solid fa-caret-down colorRojo"></i>
+                        Mínima
+                    </div>
+                    <h4 class="data" id="minTemp"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="titulo">
+                <i class="fa-solid fa-person colorCeleste"></i>
+                SENSACIÓN
+            </div>
+            <div class="cantidad">
+                <h2 class="unit" id="unitSens">
+                    <i class="fa-solid fa-arrows-rotate fa-spin"></i>
+                </h2>
+                <div class="porcentaje">
+                    <h4 class="simbolo">°C</h4>
+                    <h4 class="unitDecimal" id="unitDecimalSens"></h4>
+                </div>
+            </div>
+            <div class="maxmin">
+                <div class="content">
+                    <div class="titulo">
+                        <i class="fa-solid fa-caret-up colorVerdeClaro"></i>
+                        Máxima
+                    </div>
+                    <h4 class="maximo" id="maxSens"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+                </div>
+                <div class="content">
+                    <div class="titulo">
+                        <i class="fa-solid fa-caret-down colorRojo"></i>
+                        Mínima
+                    </div>
+                    <h4 class="minimo" id="minSens"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="incendioTemplate">
+    <div class="info" id="incendioCard">
+        <div class="container">
+            <h3>FFMC</h3>
+            <h4><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+            <h3>DMC</h3>
+            <h4><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+            <h3>DC</h3>
+            <h4><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+        </div>
+        <div class="container">
+            <h3>ISI</h3>
+            <h4><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+            <h3>BUI</h3>
+            <h4><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+            <h3>FWI</h3>
+            <h4><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+        </div>
+    </div>
+</template>
+
+<template id="humedadTemplate">
+    <div class="info">
+        <div class="container">
+            <div class="titulo">
+                <i class="fa-solid fa-droplet colorCeleste"></i>
+                HUMEDAD
+            </div>
+            <div class="cantidad">
+                <h2 class="unit" id="unitHumedad">
+                    <i class="fa-solid fa-arrows-rotate fa-spin"></i>
+                </h2>
+                <div class="porcentaje">
+                    <h4 class="simbolo">%</h4>
+                    <h4 class="unitDecimal" id="unitHumedadDecimal"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="presionTemplate">
+    <div class="info">
+        <div class="container">
+            <div class="titulo">
+                <i class="fa-solid fa-circle-down colorVerdeClaro"></i>
+                PRESION
+            </div>
+            <div class="cantidad">
+                <h2 class="unit" id="unitPresion">
+                    <i class="fa-solid fa-arrows-rotate fa-spin"></i>
+                </h2>
+                <div class="porcentaje">
+                    <h4 class="simbolo">hPa</h4>
+                    <h4 class="unitDecimal" id="unitPresionDecimal"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="vientoTemplate">
+    <div class="info">
+        <div class="container">
+            <div class="titulo">
+                <i class="fa-solid fa-circle-down colorGris"></i>
+                VIENTO
+            </div>
+            <div class="cantidad">
+                <h2 class="unit" id="unitViento">
+                    <i class="fa-solid fa-arrows-rotate fa-spin"></i>
+                </h2>
+                <div class="porcentaje">
+                    <h4 class="simbolo">Km/H</h4>
+                    <h4 class="unitDecimal" id="unitVientoDecimal"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+                </div>
+            </div>
+            <div class="maxmin">
+                <div class="max">
+                    <div class="titulo">
+                        <i class="fa-solid fa-caret-up colorRojo"></i>
+                        Máxima
+                    </div>
+                    <h4 class="max" id="vientoMaximo"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="direccionViento">
+                <i class="fa-solid fa-compass colorRojo"></i>
+                <p id="direccionViento"><i class="fa-solid fa-arrows-rotate fa-spin"></i></p>
+            </div>
+        </div>
+    </div>
+</template>
+<!-- template -->
+
+<div class="detalle">
+    <div class="control" id="control">
+        <a href="panel" class="volver">
+            <i class="fa-solid fa-angles-left"></i>
+            <h3>Volver atras</h3>
+        </a>
+        <div class="titulo">
+            <h2 id="titulo"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h2>
+        </div>
+        <div class="btn" key="temperatura">
+            <i class="fa-solid fa-temperature-three-quarters colorNaranja"></i>
+            <h3 id="tempActual"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h3>
+        </div>
+        <div class="btn" key="incendio">
+            <i class="fa-solid fa-fire colorFuego"></i>
+            <h3 id="fireActual"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h3>
+        </div>
+        <div class="btn" key="humedad">
+            <i class="fa-solid fa-droplet colorCeleste"></i>
+            <h3 id="waterActual"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h3>
+        </div>
+        <div class="btn" key="presion">
+            <i class="fa-solid fa-circle-down colorVerdeClaro"></i>
+            <h3 id="presionActual"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h3>
+        </div>
+        <div class="btn doble" key="viento">
+            <div class="box">
+                <i class="fa-solid fa-wind colorGris"></i>
+                <h3 id="windActual"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h3>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-compass colorRojo"></i>
+                <h4 id="ubiActual"><i class="fa-solid fa-arrows-rotate fa-spin"></i></h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./views/static/js/detalle.js"></script>
+
+@extern('footer')
