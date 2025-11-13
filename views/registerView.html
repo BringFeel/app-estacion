@@ -1,0 +1,30 @@
+@extern('head')
+@extern('header')
+
+<div class="auth-container">
+    <h2>Crear una Cuenta</h2>
+
+        <div class="message-box">{{MESSAGE}}</div>
+    
+    <form action="register" method="POST" class="auth-form">
+        <label for="nombres">Nombre(s)</label>
+        <input type="text" id="nombres" name="nombres" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="repeat_password">Repetir Contraseña</label>
+        <input type="password" id="repeat_password" name="repeat_password" required>
+
+        <button type="submit" class="btn-primary">Registrarse</button>
+
+        <div class="link-login">
+            <p>¿Ya tienes una cuenta? <a href="login">Iniciar Sesión</a></p>
+        </div>
+    </form>
+</div>
+
+@extern('footer')

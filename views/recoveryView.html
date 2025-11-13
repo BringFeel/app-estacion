@@ -1,0 +1,23 @@
+@extern('head')
+@extern('header')
+
+<div class="auth-container">
+    <h2>Recuperar Contraseña</h2>
+
+        <div class="message-box info">{{MESSAGE}}</div>
+
+    <p>Ingrese su correo electrónico para restablecer su contraseña.</p>
+    
+    <form action="recovery" method="POST" class="auth-form">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit" class="btn-primary">Enviar Instrucciones</button>
+
+        <div class="link-back">
+            <p><a href="login">Volver a Acceder</a></p>
+        </div>
+    </form>
+</div>
+
+@extern('footer')

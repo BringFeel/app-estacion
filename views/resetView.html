@@ -1,0 +1,25 @@
+@extern('head')
+@extern('header')
+
+<div class="auth-container">
+    <h2>Restablecer Contraseña</h2>
+
+        <div class="message-box">{{MESSAGE}}</div>
+
+        <p>Ingrese y confirme su nueva contraseña.</p>
+        <form method="POST" class="auth-form">
+            <label for="password">Nueva Contraseña</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="repeat_password">Repetir Contraseña</label>
+            <input type="password" id="repeat_password" name="repeat_password" required>
+
+            <button type="submit" class="btn-primary">Restablecer</button>
+        </form>
+
+    <div class="link-back">
+        <p><a href="../login">Volver a Acceder</a></p>
+    </div>
+</div>
+
+@extern('footer')

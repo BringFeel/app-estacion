@@ -1,0 +1,28 @@
+@extern('head')
+@extern('header')
+
+<div class="auth-container">
+    <h2>Acceder a App-Estación</h2>
+
+        <div class="message-box error">{{ERROR_MESSAGE}}</div>
+    
+    <form action="login" method="POST" class="auth-form">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required>
+
+        <div class="link-forgot">
+            <a href="recovery">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button type="submit" class="btn-primary">Acceder</button>
+
+        <div class="link-register">
+            <p>¿No tienes una cuenta? <a href="register">Registrarse</a></p>
+        </div>
+    </form>
+</div>
+
+@extern('footer')

@@ -13,9 +13,16 @@
 	// por defecto seccion es landing
 	$seccion = "landing";
 
+	// Parámetro adicional para el token (ej: validate/TOKEN)
+	$token_param = null;
+
 	// si existe slug por GET
-	if($_GET['slug']!=""){
-		$seccion = $_GET['slug'];
+	if(!empty($_GET['slug'])){
+		$parts = explode('/', $_GET['slug']);
+        $seccion = $parts[0]; // La primera parte es el controlador
+        if (count($parts) > 1) {
+            $token_param = $parts[1]; // La segunda parte es el token/token_action
+        }
 	}
 
 

@@ -1,15 +1,22 @@
-<?php
-	// carga la vista
-	$tpl = new poroto("detalle");
+<?php 
+    // controllers/detalleController.php
 
-	// variables a reemplazar en la vista
-	$vars = ["PROYECT_SECTION" => "Detalle"];
-	
-	// reemplaza las variables de la vista con los valores del vector 
-	$tpl->setVars($vars);
+    // Requerimiento: ahora solo disponible si el usuario está logueado, en caso de no estarlo redirecciona a "login".
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: login");
+        exit();
+    }
 
-	// imprime la vista en la página
-	$tpl->print();
+    // carga la vista
+    $tpl = new poroto("detalle");
 
+    // vector con variables para la vista
+    $vars = ["PROYECT_SECTION" => "Detalle de Estación"];
 
- ?>
+    // reemplaza las variables de la vista con los valores del vector
+    $tpl->setVars($vars);
+    
+    // imprime la vista en la página
+    $tpl->print();
+
+?>
