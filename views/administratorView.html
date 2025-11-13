@@ -1,0 +1,28 @@
+@extern('head')
+@extern('header')
+
+<div style="display:flex; justify-content:flex-end; margin-top:10px;">
+  <a href="logout" class="btn-primary">Cerrar sesión</a>
+</div>
+
+<div style="margin: 20px 0;">
+  <a href="map" class="btn-primary">Mapa de clientes</a>
+</div>
+
+<div class="card">
+  <div class="header"><h2>Estadísticas</h2></div>
+  <div class="contenido">
+    <div style="display:flex; gap:20px;">
+      <div class="stat-card">
+        <div class="stat-title">Usuarios registrados</div>
+        <div class="stat-value">{{USERS_COUNT}}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Cantidad de clientes</div>
+        <div class="stat-value">{{CLIENTS_COUNT}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@extern('footer')

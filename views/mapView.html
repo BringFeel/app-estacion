@@ -1,0 +1,44 @@
+@extern('head')
+@extern('header')
+
+<div style="display:flex; justify-content:flex-end; margin:10px 0;">
+  <a href="administrator" class="btn-primary">Volver</a>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<div id="map" style="width:100%; height:80vh; border-radius:8px;"></div>
+
+<script>
+  const map = L.map('map').setView([0,0], 2);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap'
+  }).addTo(map);
+
+  fetch('api?list-clients-location=1')
+    .then(r => r.json())
+    .then(data => {
+      if (!Array.isArray(data)) return;
+      const markers = [];
+      data.forEach(({ip, latitud, longitud, accesses}) => {
+        const lat = parseFloat(latitud);
+        const lon = parseFloat(longitud);
+        if (isFinite(lat) && isFinite(lon)) {
+          const m = L.marker([lat, lon]).addTo(map);
+          m.bindPopup(`<b>${ip}</b><br/>Accesos: ${accesses ?? 1}`);
+          markers.push(m);
+        }
+      });
+      if (markers.length) {
+        const group = L.featureGroup(markers);
+        map.fitBounds(group.getBounds().pad(0.2));
+      }
+    })
+    .catch((e) => {
+      console.error(e);
+    });
+</script>
+
+@extern('footer')
